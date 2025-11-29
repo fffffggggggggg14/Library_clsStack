@@ -1,0 +1,32 @@
+#pragma once
+
+#include <iostream>
+#include "clsQueue.h"
+using namespace std;
+
+template <class t_c>
+class clsStack : public clsQueue <t_c> {
+    public:
+        void push(t_c data){
+            clsQueue<t_c>::_node.insert_at_beginning(data);
+        }
+
+        t_c top(void){
+            return clsQueue<t_c>::front();
+        }
+
+        t_c bottom(void){
+            return clsQueue<t_c>::back();
+        }
+
+        void insert_at_top(t_c data){
+            clsQueue<t_c>::insert_at_front(data);
+        }
+
+        void insert_at_bottom(t_c data){
+            clsQueue<t_c>::insert_at_back(data);
+        }
+
+
+};
+
